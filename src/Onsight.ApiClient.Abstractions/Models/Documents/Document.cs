@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Onsight.ApiClient.Abstractions.Models.Account;
 using Onsight.ApiClient.Abstractions.Models.Base;
 using Onsight.ApiClient.Abstractions.Models.Customers;
-using Onsight.ApiClient.Abstractions.Models.Documents.Base;
 
 namespace Onsight.ApiClient.Abstractions.Models.Documents
 {
@@ -14,7 +13,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
             long customerId, string documentStatus, string paymentMethod, string referenceNo, int year, int month, int day, 
             Customer customer, Contact? contact, string accountRefNo, string notes, DateTime requiredAt, 
             bool emailed, decimal discountPercentage, decimal discountValue, string signatureLocation, string signatureFile, 
-            string uniqueId, User createdBy, IReadOnlyList<BaseDocumentLine> lines) 
+            string uniqueId, User createdBy, IReadOnlyList<DocumentLine> lines) 
                 : base(id, modifiedAt, createdAt, status, externalKey)
         {
             CustomerId = customerId;
@@ -58,6 +57,6 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
         public string SignatureFile { get;}
         public string UniqueId { get;}
         public User CreatedBy { get;}
-        public IReadOnlyList<BaseDocumentLine> Lines { get;}
+        public IReadOnlyList<DocumentLine> Lines { get;}
     }
 }
