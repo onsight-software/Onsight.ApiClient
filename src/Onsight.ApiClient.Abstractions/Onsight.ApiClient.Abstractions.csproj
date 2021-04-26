@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Clients\.Base\IOnsightApiClient.cs" />
     <Compile Include="Models\.Base\BaseOnsightModel.cs" />
     <Compile Include="Models\.Base\IOnsightModel.cs" />
   </ItemGroup>

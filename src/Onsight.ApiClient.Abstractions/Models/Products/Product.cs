@@ -34,12 +34,14 @@ namespace Onsight.ApiClient.Abstractions.Models.Products
             Barcode = barcode;
             Featured = featured;
             IsMasterProduct = isMasterProduct;
-            ParentProduct = parentProduct; 
             StockCount = stockCount;
             ApplicableTaxes = applicableTaxes;
             LocalImagePath = localImagePath;
             Valid = valid;
             TaxCodeId = taxCodeId;
+
+            ParentProduct = parentProduct is {Id: 0} ? null : parentProduct;
+
         }
 
         public ProductCategory Category { get; }

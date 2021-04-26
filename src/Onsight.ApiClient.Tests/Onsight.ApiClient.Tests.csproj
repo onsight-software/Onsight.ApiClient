@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include=".Config\AppTest3Config.cs" />
+    <Compile Include="Tests\.Base\BaseOnsightApiClientTest.cs" />
+    <Compile Include=".Config\AdrianConfig.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blauhaus.TestHelpers" Version="1.2.6" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
@@ -16,6 +23,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Onsight.ApiClient\Onsight.ApiClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Tests\AuthenticationClientTests\" />
+    <Folder Include="Tests\ProductsClientTests\" />
   </ItemGroup>
 
 </Project>
