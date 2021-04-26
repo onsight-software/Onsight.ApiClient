@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient", "Onsight.ApiClient\Onsight.ApiClient.csproj", "{ECF048BF-B633-4228-BE2E-705B671B99EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient.Tests", "Onsight.ApiClient.Tests\Onsight.ApiClient.Tests.csproj", "{7BE595F2-922F-471C-8760-99E5549F2BE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECF048BF-B633-4228-BE2E-705B671B99EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF048BF-B633-4228-BE2E-705B671B99EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF048BF-B633-4228-BE2E-705B671B99EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF048BF-B633-4228-BE2E-705B671B99EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BE595F2-922F-471C-8760-99E5549F2BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BE595F2-922F-471C-8760-99E5549F2BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BE595F2-922F-471C-8760-99E5549F2BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BE595F2-922F-471C-8760-99E5549F2BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F01B5EE-E816-4FE4-AFB3-AB3E0B97E42C}
+	EndGlobalSection
+EndGlobal
