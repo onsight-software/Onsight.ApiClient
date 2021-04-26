@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient", "Onsigh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient.Tests", "Onsight.ApiClient.Tests\Onsight.ApiClient.Tests.csproj", "{7BE595F2-922F-471C-8760-99E5549F2BE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient.Abstractions", "Onsight.ApiClient.Abstractions\Onsight.ApiClient.Abstractions.csproj", "{91F449C7-E70A-41BF-B8E1-ED4F8E92168D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7BE595F2-922F-471C-8760-99E5549F2BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE595F2-922F-471C-8760-99E5549F2BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE595F2-922F-471C-8760-99E5549F2BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F449C7-E70A-41BF-B8E1-ED4F8E92168D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F449C7-E70A-41BF-B8E1-ED4F8E92168D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F449C7-E70A-41BF-B8E1-ED4F8E92168D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F449C7-E70A-41BF-B8E1-ED4F8E92168D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
