@@ -7,7 +7,7 @@ using Onsight.ApiClient.Clients.Base;
 
 namespace Onsight.ApiClient.Clients
 {
-    public class ProductsClient : BaseOnsightApiClient<Product>, IProductsClient
+    public class ProductsClient : BaseOnsightApiClient<ProductDto>, IProductsClient
     {
         public ProductsClient(
             HttpClient httpClient, 

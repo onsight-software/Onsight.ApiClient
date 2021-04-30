@@ -10,7 +10,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
             long id, DateTime modifiedAt, DateTime createdAt, string status, string externalKey, 
             string description, 
             decimal discountPercentage, decimal discountUnitCost, decimal invoicedQuantity, decimal lineItemUnitCost, decimal lineItemUnitCostIncl, decimal lineTotal,
-            string notes, int position, decimal quantity, Product product, decimal totalTax, decimal unitCost) 
+            string notes, int position, decimal quantity, ProductDto productDto, decimal totalTax, decimal unitCost) 
                 : base(id, modifiedAt, createdAt, status, externalKey)
         {
             Description = description;
@@ -23,7 +23,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
             Notes = notes;
             Position = position;
             Quantity = quantity;
-            Product = product;
+            ProductDto = productDto;
             TotalTax = totalTax;
             UnitCost = unitCost;
         }
@@ -38,7 +38,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
         public string Notes { get; }
         public int Position { get; }
         public decimal Quantity { get; }
-        public Product Product { get; }
+        public ProductDto ProductDto { get; }
         public decimal TotalTax { get; }
         public decimal UnitCost { get; }
     }

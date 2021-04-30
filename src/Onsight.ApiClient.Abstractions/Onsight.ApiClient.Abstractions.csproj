@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
       <LangVersion>latest</LangVersion>
       <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -9,6 +9,8 @@
   <ItemGroup>
     <Compile Include="Clients\.Base\IOnsightApiClient.cs" />
     <Compile Include="Models\.Base\BaseOnsightModel.cs" />
+    <Compile Include="Models\.Base\LinkDto.cs" />
+    <Compile Include="Models\.Base\OnsightDto.cs" />
     <Compile Include="Models\.Base\IOnsightModel.cs" />
   </ItemGroup>
 

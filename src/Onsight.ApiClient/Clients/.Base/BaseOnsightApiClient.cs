@@ -30,7 +30,7 @@ namespace Onsight.ApiClient.Clients.Base
         }
     }
 
-    public abstract class BaseOnsightApiClient<TModel> : BaseOnsightApiClient, IOnsightApiClient<TModel> where TModel : IOnsightModel
+    public abstract class BaseOnsightApiClient<TModel> : BaseOnsightApiClient, IOnsightApiClient<TModel> where TModel : OnsightDto
     {
         private readonly IAuthenticationClient _authenticationClient;
         private readonly string _uri;
