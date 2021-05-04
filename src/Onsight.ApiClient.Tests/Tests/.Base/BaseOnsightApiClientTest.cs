@@ -1,4 +1,5 @@
-﻿using Blauhaus.TestHelpers.BaseTests;
+﻿using System;
+using Blauhaus.TestHelpers.BaseTests;
 using NUnit.Framework;
 using Onsight.ApiClient.Clients.Base;
 using Onsight.ApiClient.Ioc;
@@ -8,8 +9,9 @@ namespace Onsight.ApiClient.Tests.Tests.Base
 {
 
     public abstract class BaseOnsightApiClientTest<TApiClient> : BaseServiceTest<TApiClient> 
-        where TApiClient : BaseOnsightApiClient 
+        where TApiClient : BaseOnsightApiClient
     {
+        protected Random Random = new Random();
 
         [SetUp]
         public virtual void Setup()

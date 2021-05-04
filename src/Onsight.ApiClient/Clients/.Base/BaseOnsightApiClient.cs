@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -52,7 +53,7 @@ namespace Onsight.ApiClient.Clients.Base
             _uri = baseUrl + endpoint;
         }
 
-        public async Task<TModel> GetOneAsync(long id, CancellationToken token = default)
+        public async Task<TModel> GetAsync(long id, CancellationToken token = default)
         {
             await _authenticationClient.AuthenticateAsync(HttpClient, token);
             
@@ -74,7 +75,30 @@ namespace Onsight.ApiClient.Clients.Base
 
         }
 
-         
+        //public async Task<TModel> UpdateAsync(TModel model, CancellationToken token = default)
+        //{
+        //    await _authenticationClient.AuthenticateAsync(HttpClient, token);
 
+        //    var uri = new Uri(_uri + model.Id);
+            
+        //    var json = JsonConvert.SerializeObject(model);
+        //    var payload = new StringContent(json, new UTF8Encoding(), "application/json");
+            
+        //    var response = await HttpClient.PatchAsync(uri, payload, token);
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var responseString = await response.Content.ReadAsStringAsync();
+        //        //var responseDto = JsonConvert.DeserializeObject<TModel>(responseString);
+        //        //if (responseDto == null)
+        //        //{
+        //        //    throw new Exception($"Null response returned from API for {typeof(TModel).Name} with id {id}");
+        //        //}
+                
+        //        return null;
+        //    }
+
+        //    throw new Exception($"Error response returned from API for {typeof(TModel).Name}: {response.StatusCode} ({response.ReasonPhrase})");
+
+        //}
     }
 }

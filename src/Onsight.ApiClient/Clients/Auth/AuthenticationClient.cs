@@ -54,6 +54,7 @@ namespace Onsight.ApiClient.Clients.Auth
                 }
             }
             
+            httpClient.DefaultRequestHeaders.Clear();
             httpClient.DefaultRequestHeaders.Add("X-Onsight-AuthToken", _tokenResponse.Token);
              
         }

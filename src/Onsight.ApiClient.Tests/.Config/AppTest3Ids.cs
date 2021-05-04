@@ -1,4 +1,5 @@
-﻿namespace Onsight.ApiClient.Tests.Config
+﻿// ReSharper disable InconsistentNaming
+namespace Onsight.ApiClient.Tests.Config
 {
     public static class AppTest3Ids
     {
@@ -9,6 +10,23 @@
             public static long HighAndLowPriceCustomer = 712467;
             public static long LimitedAccessCustomer = 712463;
             public static long BelongsToAppUser = 712468;
+        }
+
+        public class CategoryIds
+        {
+            public static long Arrows = 281840 ;
+            public static long Arrows_Carets = 281841;
+            public static long Arrows_RoundArrows = 281845;
+
+            public static long TaxConfiguration = 281842;
+
+            public static long CustomerGroupProducts = 281843;
+            public static long CustomerGroupProducts_LimitedAccessProducts = 281846;
+            public static long CustomerGroupProducts_OverridePriceProducts = 281844;
+            
+            public static long ThingsThatPointLeft = 281847;
+
+            public static long Scanners = 281839;
         }
 
         public class ProductIds
