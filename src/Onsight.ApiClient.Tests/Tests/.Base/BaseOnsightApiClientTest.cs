@@ -11,7 +11,7 @@ namespace Onsight.ApiClient.Tests.Tests.Base
     public abstract class BaseOnsightApiClientTest<TApiClient> : BaseServiceTest<TApiClient> 
         where TApiClient : BaseOnsightApiClient
     {
-        protected Random Random = new Random();
+        protected Random Random = new();
 
         [SetUp]
         public virtual void Setup()

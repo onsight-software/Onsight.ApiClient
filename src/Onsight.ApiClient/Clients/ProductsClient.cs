@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Onsight.ApiClient.Abstractions.Clients;
 using Onsight.ApiClient.Abstractions.Config;
+using Onsight.ApiClient.Abstractions.Models.Base;
 using Onsight.ApiClient.Abstractions.Models.Products;
 using Onsight.ApiClient.Clients.Auth;
 using Onsight.ApiClient.Clients.Base;
@@ -19,9 +20,18 @@ namespace Onsight.ApiClient.Clients
         {
         }
 
-        public Task<ProductDto> UpdatePriceAsync(long id, decimal newPrice, CancellationToken token = default)
+        public async Task<ProductDto> UpdatePriceAsync(long id, decimal newPrice, CancellationToken token = default)
         {
-            throw new System.NotImplementedException();
+            var existingProduct = await GetAsync(id, token);
+
+            var updatedProduct = existingProduct with
+            {
+                Links = new LinkDto[0],
+                PrimaryImage = $"{existingProduct.ImageLocation}/id/{existingProduct.PrimaryImage}",
+                Price = newPrice,
+            };
+
+            return await PatchAsync(updatedProduct, id.ToString(), token);
         }
     }
 }
