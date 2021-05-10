@@ -8,7 +8,7 @@ namespace Onsight.ApiClient.Ioc
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddOnsightClients<TConfig>(this IServiceCollection services) 
+        public static IServiceCollection AddOnsightApiClient<TConfig>(this IServiceCollection services) 
             where TConfig : class, IOnsightApiClientConfig
         {
 

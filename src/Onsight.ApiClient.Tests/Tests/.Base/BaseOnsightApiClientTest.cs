@@ -18,7 +18,7 @@ namespace Onsight.ApiClient.Tests.Tests.Base
         {
             base.Cleanup();
 
-            Services.AddOnsightClients<AppTest3Config>();
+            Services.AddOnsightApiClient<AppTest3Config>();
         }
     }
 }
