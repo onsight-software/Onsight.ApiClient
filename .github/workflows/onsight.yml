@@ -22,8 +22,8 @@ jobs:
        with:
          files: '.src/Onsight.ApiClient.Tests/appsettings.json'
          env:
-           AppSettings.AppTest3_ApiKey: "${{ secrets.APPTEST3_APIKEY}}"
-           AppSettings.AppTest3_ApiSecret: "${{ secrets.APPTEST3_APISECRET }}"
+           AppTest3_ApiKey: "${{ secrets.APPTEST3_APIKEY }}"
+           AppTest3_ApiSecret: "${{ secrets.APPTEST3_APISECRET }}"
      - name: Run Tests
        run: |
         dotnet test ./src/Onsight.ApiClient.Tests/Onsight.ApiClient.Tests.csproj
