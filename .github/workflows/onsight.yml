@@ -20,10 +20,10 @@ jobs:
         dotnet pack ./src/Onsight.ApiClient/Onsight.ApiClient.csproj -p:PackageVersion=${VERSION_NAME} --no-build --output ./ --configuration Release 
      - uses: microsoft/variable-substitution@v1
        with:
-         files: '.src/Onsight.ApiClient.Tests/appsettings.json'
+         files: './src/Onsight.ApiClient.Tests/appsettings.json'
          env:
-           AppTest3_ApiKey: "${{ secrets.APPTEST3_APIKEY }}"
-           AppTest3_ApiSecret: "${{ secrets.APPTEST3_APISECRET }}"
+           AppSettings.AppTest3_ApiKey: "${{ secrets.APPTEST3_APIKEY }}"
+           AppSettings.AppTest3_ApiSecret: "${{ secrets.APPTEST3_APISECRET }}"
      - name: Run Tests
        run: |
         dotnet test ./src/Onsight.ApiClient.Tests/Onsight.ApiClient.Tests.csproj
