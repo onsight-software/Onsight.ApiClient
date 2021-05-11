@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient", "Onsight.ApiClient\Onsight.ApiClient.csproj", "{ECF048BF-B633-4228-BE2E-705B671B99EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onsight.ApiClient", "Onsight.ApiClient\Onsight.ApiClient.csproj", "{ECF048BF-B633-4228-BE2E-705B671B99EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient.Tests", "Onsight.ApiClient.Tests\Onsight.ApiClient.Tests.csproj", "{7BE595F2-922F-471C-8760-99E5549F2BE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onsight.ApiClient.Tests", "Onsight.ApiClient.Tests\Onsight.ApiClient.Tests.csproj", "{7BE595F2-922F-471C-8760-99E5549F2BE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onsight.ApiClient.Abstractions", "Onsight.ApiClient.Abstractions\Onsight.ApiClient.Abstractions.csproj", "{91F449C7-E70A-41BF-B8E1-ED4F8E92168D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onsight.ApiClient.Abstractions", "Onsight.ApiClient.Abstractions\Onsight.ApiClient.Abstractions.csproj", "{91F449C7-E70A-41BF-B8E1-ED4F8E92168D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9B72AE1-BBC4-494B-A7F4-6D09A275D97B}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\onsight.yml = ..\.github\workflows\onsight.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
