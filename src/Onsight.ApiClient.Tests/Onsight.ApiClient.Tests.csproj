@@ -18,7 +18,6 @@
     <Compile Include=".Config\AppTest3Config.cs" />
     <Compile Include=".Config\AppTest3Ids.cs" />
     <Compile Include="Tests\.Base\BaseOnsightApiClientTest.cs" />
-    <Compile Include=".Config\AdrianConfig.cs" />
     <Compile Include="Tests\ProductsClientTests\.Base\BaseProductClientTest.cs" />
   </ItemGroup>
 

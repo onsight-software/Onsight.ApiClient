@@ -7,7 +7,6 @@ namespace Onsight.ApiClient.Tests.Config
     {
         public AppTest3Config(IConfiguration config)
             : base(config.GetSection("APPTEST3_APIKEY").Value, config.GetSection("APPTEST3_APISECRET").Value)
-            //:base("QT4q5FXQTediZfCz7RqEjrZB9Go+8wvT", "lpZbT+r2hRHkYrXyv35oJX/ZARnT2VHl")
         {
         }
 
