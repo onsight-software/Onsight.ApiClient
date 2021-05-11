@@ -19,8 +19,8 @@ jobs:
        with:
          files: './src/Onsight.ApiClient.Tests/appsettings.json'
        env:
-         AppSettings.AppTest3_ApiKey: "${{ secrets.APPTEST3_APIKEY }}"
-         AppSettings.AppTest3_ApiSecret: "${{ secrets.APPTEST3_APISECRET }}"
+         AppTest3_ApiKey: "${{ secrets.APPTEST3_APIKEY }}"
+         AppTest3_ApiSecret: "${{ secrets.APPTEST3_APISECRET }}"
      - name: Build NuGet Package
        run: |
         dotnet build ./src/Onsight.ApiClient.sln --configuration Release
