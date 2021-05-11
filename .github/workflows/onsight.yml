@@ -20,4 +20,4 @@ jobs:
         dotnet pack ./src/Onsight.ApiClient/Onsight.ApiClient.csproj -p:PackageVersion=${VERSION_NAME} --no-build --output ./ --configuration Release 
      - name: Run Tests
        run: |
-        dotnet test ./src/Onsight.ApiClient/Onsight.ApiClient.csproj
+        dotnet test ./src/Onsight.ApiClient.Tests/Onsight.ApiClient.Tests.csproj
