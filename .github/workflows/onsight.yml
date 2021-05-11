@@ -18,7 +18,8 @@ jobs:
        run: |
         dotnet build ./src/Onsight.ApiClient.sln --configuration Release
         dotnet pack ./src/Onsight.ApiClient/Onsight.ApiClient.csproj -p:PackageVersion=${VERSION_NAME} --no-build --output ./ --configuration Release 
-     - uses: microsoft/variable-substitution@v1
+     - name: App Settings Variable Substitution
+       uses: microsoft/variable-substitution@v1
        with:
          files: './src/Onsight.ApiClient.Tests/appsettings.json'
          env:
