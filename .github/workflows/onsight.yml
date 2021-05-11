@@ -17,7 +17,7 @@ jobs:
      - name: Build NuGet Package
        run: |
         dotnet build ./src/Onsight.ApiClient.sln --configuration Release
-        dotnet pack ./src/Onsight.ApiClient.csproj -p:PackageVersion=${VERSION_NAME} --no-build --output ./ --configuration Release 
+        dotnet pack ./src/Onsight.ApiClient/Onsight.ApiClient.csproj -p:PackageVersion=${VERSION_NAME} --no-build --output ./ --configuration Release 
      - name: Run Tests
        run: |
         dotnet test ./src/Onsight.ApiClient.csproj --no-build -- no-restore --configuration Release
