@@ -1,5 +1,7 @@
 ﻿using System;
 using Blauhaus.TestHelpers.BaseTests;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using Onsight.ApiClient.Clients.Base;
 using Onsight.ApiClient.Ioc;
@@ -19,6 +21,13 @@ namespace Onsight.ApiClient.Tests.Tests.Base
             base.Cleanup();
 
             Services.AddOnsightApiClient<AppTest3Config>();
+
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .AddUserSecrets<BaseOnsightApiClientTest<TApiClient>>()
+                .Build();
+
+            Services.AddSingleton<IConfiguration>(configuration);
         }
     }
 }
