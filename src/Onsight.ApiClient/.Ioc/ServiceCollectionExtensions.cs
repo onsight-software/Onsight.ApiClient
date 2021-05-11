@@ -11,12 +11,22 @@ namespace Onsight.ApiClient.Ioc
         public static IServiceCollection AddOnsightApiClient<TConfig>(this IServiceCollection services) 
             where TConfig : class, IOnsightApiClientConfig
         {
+            return services
+                .AddSingleton<IOnsightApiClientConfig, TConfig>()
+                .AddClients();
+        }
 
-            services.AddSingleton<IOnsightApiClientConfig, TConfig>();
+        public static IServiceCollection AddOnsightApiClient(this IServiceCollection services, string apiKey, string apiSecret) 
+        {
+            return services
+                .AddSingleton<IOnsightApiClientConfig>(new OnsightApiClientConfig(apiKey, apiSecret))
+                .AddClients();
+        }
 
+        private static IServiceCollection AddClients(this IServiceCollection services)
+        {
             services.AddHttpClient<IAuthenticationClient, AuthenticationClient>();
             services.AddHttpClient<IProductsClient, ProductsClient>();
-
             return services;
         }
     }

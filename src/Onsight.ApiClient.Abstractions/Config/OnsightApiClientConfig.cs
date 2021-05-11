@@ -1,9 +1,9 @@
 ﻿namespace Onsight.ApiClient.Abstractions.Config
 {
-    public abstract class BaseOnsightApiClientConfig : IOnsightApiClientConfig
+    public class OnsightApiClientConfig : IOnsightApiClientConfig
     {
 
-        protected BaseOnsightApiClientConfig(string apiKey, string apiSecret, string? serviceUrl = null)
+        public OnsightApiClientConfig(string apiKey, string apiSecret, string? serviceUrl = null)
         {
             ServiceUrl = serviceUrl ?? "http://publicapiv5.onsightapp.com";
             ApiKey = apiKey;

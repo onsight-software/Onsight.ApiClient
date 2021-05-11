@@ -14,8 +14,4 @@
     <Compile Include="Models\.Base\IOnsightModel.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Config\" />
-  </ItemGroup>
-
 </Project>
