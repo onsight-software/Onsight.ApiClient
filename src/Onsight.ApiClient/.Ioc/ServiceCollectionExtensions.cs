@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Onsight.ApiClient.Abstractions.Clients;
 using Onsight.ApiClient.Abstractions.Clients.Products;
 using Onsight.ApiClient.Abstractions.Config;
 using Onsight.ApiClient.Clients;

@@ -8,6 +8,10 @@ namespace Onsight.ApiClient.Abstractions.Dtos.Customers
     public record CustomerDto(IReadOnlyList<LinkDto> Links, long Id, DateTime CreatedAt, DateTime ModifiedAt, string Status, string ExternalKey,
         string Name, 
         string UniqueId,
+        string Comment, 
+        string Email, 
+        string TaxNumber,
+        bool IsTaxable,
         string BillingAddress1, 
         string BillingAddress2, 
         string BillingCity, 
@@ -21,20 +25,7 @@ namespace Onsight.ApiClient.Abstractions.Dtos.Customers
         string ShippingPostalCode, 
         string ShippingState,
         float Latitude,
-        float Longitude,
-        string Comment, 
-        string Email, 
-        string Mobile, 
-        string Telephone, 
-        string Website, 
-        string TaxNumber,
-        bool IsTaxable,
-        bool ApplyDiscountPercentage, 
-        decimal DiscountPercentage, 
-        bool AllowUserOverrideDiscountPercentage, 
-        decimal MaxAllowableDiscountPercentage,
-        List<Contact> ContactPersons,
-        List<CustomerGroup> CustomerGroups) 
+        float Longitude) 
             : OnsightDto(Links, Id, CreatedAt, ModifiedAt, Status, ExternalKey);
 
 }

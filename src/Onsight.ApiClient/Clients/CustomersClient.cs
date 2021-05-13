@@ -1,9 +1,7 @@
 ﻿using System.Net.Http;
-using Onsight.ApiClient.Abstractions.Clients;
 using Onsight.ApiClient.Abstractions.Clients.Customers;
 using Onsight.ApiClient.Abstractions.Config;
 using Onsight.ApiClient.Abstractions.Dtos.Customers;
-using Onsight.ApiClient.Abstractions.Models.Customers;
 using Onsight.ApiClient.Clients.Auth;
 using Onsight.ApiClient.Clients.Base;
 
