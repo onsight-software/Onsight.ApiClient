@@ -6,12 +6,11 @@ using Onsight.ApiClient.Abstractions.Values;
 using Onsight.ApiClient.Clients;
 using Onsight.ApiClient.Tests.Extensions;
 using Onsight.ApiClient.Tests.Tests.Base;
-using Onsight.ApiClient.Tests.Tests.ProductsClientTests.Base;
 using static Onsight.ApiClient.Tests.Config.AppTest3Ids;
 
 namespace Onsight.ApiClient.Tests.Tests.ProductsClientTests
 {
-    public class GetAsyncTests : BaseProductClientTest
+    public class GetAsyncTests : BaseOnsightApiClientTest<ProductsClient>
     {
         [Test]
         public async Task SHOULD_get_product()
@@ -21,7 +20,6 @@ namespace Onsight.ApiClient.Tests.Tests.ProductsClientTests
 
             //Assert
             Assert.That(result, Is.Not.Null);
-
             Assert.That(result.Id, Is.EqualTo(ProductIds.Scanners.BluetoothScanner));
             Assert.That(result.CreatedAt, Is.EqualTo(DateTime.Parse("2021-04-30 10:35:35.000")));
             Assert.That(result.ModifiedAt, Is.EqualTo(DateTime.Parse("2021-04-30 11:46:43.000")));

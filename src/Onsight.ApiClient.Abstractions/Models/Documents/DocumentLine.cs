@@ -1,4 +1,5 @@
 ﻿using System;
+using Onsight.ApiClient.Abstractions.Dtos.Products;
 using Onsight.ApiClient.Abstractions.Models.Base;
 using Onsight.ApiClient.Abstractions.Models.Products;
 

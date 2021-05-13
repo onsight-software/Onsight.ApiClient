@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Onsight.ApiClient.Abstractions.Dtos.Products;
 using Onsight.ApiClient.Abstractions.Models.Products;
 
 namespace Onsight.ApiClient.Tests.Extensions

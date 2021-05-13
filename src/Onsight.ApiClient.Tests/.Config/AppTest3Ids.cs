@@ -10,6 +10,7 @@ namespace Onsight.ApiClient.Tests.Config
             public static long HighAndLowPriceCustomer = 712467;
             public static long LimitedAccessCustomer = 712463;
             public static long BelongsToAppUser = 712468;
+            public static long FullyDetailedCustomer = 712464;
         }
 
         public class CategoryIds
@@ -92,5 +93,6 @@ namespace Onsight.ApiClient.Tests.Config
             }
 
         }
+         
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Onsight.ApiClient.Abstractions.Dtos.Customers;
 using Onsight.ApiClient.Abstractions.Models.Base;
 
 namespace Onsight.ApiClient.Abstractions.Models.Customers
@@ -7,7 +8,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Customers
     {
         public Contact(
             long id, DateTime modifiedAt, DateTime createdAt, string status, string externalKey, 
-            string surname, string name, string email, string telephone, string uniqueId, Customer? customer, bool isPrimary) 
+            string surname, string name, string email, string telephone, string uniqueId, CustomerDto? customer, bool isPrimary) 
                 : base(id, modifiedAt, createdAt, status, externalKey)
         {
             Surname = surname;
@@ -25,7 +26,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Customers
         public string Email { get; } 
         public string Telephone { get; } 
         public string UniqueId { get; } 
-        public Customer? Customer { get; } 
+        public CustomerDto? Customer { get; } 
         public bool IsPrimary { get; } 
 
     }

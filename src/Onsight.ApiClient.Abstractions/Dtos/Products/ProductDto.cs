@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using Onsight.ApiClient.Abstractions.Models.Account;
-using Onsight.ApiClient.Abstractions.Models.Base;
+using Onsight.ApiClient.Abstractions.Dtos.Base;
+using Onsight.ApiClient.Abstractions.Models.Products;
 
-namespace Onsight.ApiClient.Abstractions.Models.Products
+namespace Onsight.ApiClient.Abstractions.Dtos.Products
 {
     public record ProductDto(
             IReadOnlyList<LinkDto> Links,
@@ -30,6 +30,6 @@ namespace Onsight.ApiClient.Abstractions.Models.Products
             bool IsMasterProduct,
             ParentProductId ParentProduct, 
             string TaxCodeId)
-                : OnsightDto(Id, CreatedAt, ModifiedAt, Status, ExternalKey);
+                : OnsightDto(Links, Id, CreatedAt, ModifiedAt, Status, ExternalKey);
 
 }

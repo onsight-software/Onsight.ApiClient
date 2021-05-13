@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Onsight.ApiClient.Abstractions.Clients.Base;
 using Onsight.ApiClient.Abstractions.Config;
+using Onsight.ApiClient.Abstractions.Dtos.Base;
 using Onsight.ApiClient.Abstractions.Models.Base;
 using Onsight.ApiClient.Clients.Auth;
 

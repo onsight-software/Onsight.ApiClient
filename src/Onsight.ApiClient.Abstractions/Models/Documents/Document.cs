@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Onsight.ApiClient.Abstractions.Models.Account;
+using Onsight.ApiClient.Abstractions.Dtos.Customers;
+using Onsight.ApiClient.Abstractions.Dtos.Subscriber;
 using Onsight.ApiClient.Abstractions.Models.Base;
 using Onsight.ApiClient.Abstractions.Models.Customers;
 
@@ -11,9 +12,9 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
         public Document(
             long id, DateTime modifiedAt, DateTime createdAt, string status, string externalKey, 
             long customerId, string documentStatus, string paymentMethod, string referenceNo, int year, int month, int day, 
-            Customer customer, Contact? contact, string accountRefNo, string notes, DateTime requiredAt, 
+            CustomerDto customerDto, Contact? contact, string accountRefNo, string notes, DateTime requiredAt, 
             bool emailed, decimal discountPercentage, decimal discountValue, string signatureLocation, string signatureFile, 
-            string uniqueId, User createdBy, IReadOnlyList<DocumentLine> lines) 
+            string uniqueId, UserDto createdBy, IReadOnlyList<DocumentLine> lines) 
                 : base(id, modifiedAt, createdAt, status, externalKey)
         {
             CustomerId = customerId;
@@ -23,7 +24,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
             Year = year;
             Month = month;
             Day = day;
-            Customer = customer;
+            CustomerDto = customerDto;
             Contact = contact;
             AccountRefNo = accountRefNo;
             Notes = notes;
@@ -45,7 +46,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
         public int Year { get;}
         public int Month { get;}
         public int Day { get;}
-        public Customer Customer { get;}
+        public CustomerDto CustomerDto { get;}
         public Contact? Contact { get;}
         public string AccountRefNo { get;}
         public string Notes { get;}
@@ -56,7 +57,7 @@ namespace Onsight.ApiClient.Abstractions.Models.Documents
         public string SignatureLocation { get;}
         public string SignatureFile { get;}
         public string UniqueId { get;}
-        public User CreatedBy { get;}
+        public UserDto CreatedBy { get;}
         public IReadOnlyList<DocumentLine> Lines { get;}
     }
 }

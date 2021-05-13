@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
-using Onsight.ApiClient.Abstractions.Models.Base;
-using Onsight.ApiClient.Abstractions.Values;
-using Onsight.ApiClient.Tests.Config;
+using Onsight.ApiClient.Abstractions.Dtos.Base;
 
 namespace Onsight.ApiClient.Tests.Extensions
 {
