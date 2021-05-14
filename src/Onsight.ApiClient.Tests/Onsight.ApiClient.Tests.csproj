@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -17,6 +17,7 @@
   <ItemGroup>
     <Compile Include=".Config\AppTest3Config.cs" />
     <Compile Include=".Config\AppTest3Ids.cs" />
+    <Compile Include="Tests\.Base\BaseGetAsyncTests.cs" />
     <Compile Include="Tests\.Base\BaseOnsightApiClientTest.cs" />
   </ItemGroup>
 
@@ -27,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Blauhaus.Analytics.Console" Version="1.6.9" />
     <PackageReference Include="Blauhaus.TestHelpers" Version="1.2.10" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
@@ -41,7 +43,6 @@
 
   <ItemGroup>
     <Folder Include="Tests\AuthenticationClientTests\" />
-    <Folder Include="Tests\CustomersClientTests\" />
   </ItemGroup>
 
 </Project>

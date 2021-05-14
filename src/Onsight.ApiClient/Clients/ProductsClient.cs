@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Blauhaus.Analytics.Abstractions.Service;
 using Onsight.ApiClient.Abstractions.Clients.Products;
 using Onsight.ApiClient.Abstractions.Config;
 using Onsight.ApiClient.Abstractions.Dtos.Base;
@@ -15,9 +16,10 @@ namespace Onsight.ApiClient.Clients
     {
         public ProductsClient(
             HttpClient httpClient, 
+            IAnalyticsService analyticsService,
             IOnsightApiClientConfig config,
             IAuthenticationClient authenticationClient) 
-            : base(httpClient, config, authenticationClient, "products")
+            : base(httpClient, analyticsService, config, authenticationClient, "products")
         {
         }
 

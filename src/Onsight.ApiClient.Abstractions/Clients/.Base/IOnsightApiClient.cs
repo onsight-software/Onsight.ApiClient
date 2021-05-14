@@ -9,5 +9,6 @@ namespace Onsight.ApiClient.Abstractions.Clients.Base
         where TModel : OnsightDto
     {
         Task<TModel> GetAsync(long id, CancellationToken token = default);
+        Task DeleteAsync(long id, CancellationToken token = default);
     }
 }

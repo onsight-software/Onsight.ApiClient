@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Text.Json;
 using System.Threading.Tasks;
-using NUnit.Framework; 
+using NUnit.Framework;
+using Onsight.ApiClient.Abstractions.Dtos.Products;
 using Onsight.ApiClient.Abstractions.Values;
 using Onsight.ApiClient.Clients;
 using Onsight.ApiClient.Tests.Extensions;
@@ -10,7 +11,7 @@ using static Onsight.ApiClient.Tests.Config.AppTest3Ids;
 
 namespace Onsight.ApiClient.Tests.Tests.ProductsClientTests
 {
-    public class GetAsyncTests : BaseOnsightApiClientTest<ProductsClient>
+    public class GetAsyncTests : BaseGetAsyncTests<ProductsClient, ProductDto>
     {
         [Test]
         public async Task SHOULD_get_product()
