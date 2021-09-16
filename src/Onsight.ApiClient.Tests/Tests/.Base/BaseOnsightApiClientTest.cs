@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using Blauhaus.Analytics.Abstractions.Config;
 using Blauhaus.Analytics.Console.Ioc;
 using Blauhaus.Common.ValueObjects.BuildConfigs;
 using Blauhaus.TestHelpers.BaseTests;
@@ -26,6 +27,7 @@ namespace Onsight.ApiClient.Tests.Tests.Base
             Services
                 .AddSingleton<IBuildConfig>(BuildConfig.Test)
                 .RegisterConsoleLoggerService(new ConsoleTraceListener())
+                .AddSingleton<IApplicationInsightsConfig, AppTest3Config>()
                 .AddOnsightApiClient<AppTest3Config>();
 
             var configuration = new ConfigurationBuilder()

@@ -1,9 +1,11 @@
-﻿namespace Onsight.ApiClient.Abstractions.Config
+﻿using Blauhaus.Analytics.Abstractions.Config;
+
+namespace Onsight.ApiClient.Abstractions.Config
 {
-    public class OnsightApiClientConfig : IOnsightApiClientConfig
+    public class OnsightApiClientConfig : BaseApplicationInsightsConfig, IOnsightApiClientConfig
     {
 
-        public OnsightApiClientConfig(string apiKey, string apiSecret, string? serviceUrl = null)
+        public OnsightApiClientConfig(string apiKey, string apiSecret, string? serviceUrl = null) : base("", "")
         {
             ServiceUrl = serviceUrl ?? "http://publicapiv5.onsightapp.com";
             ApiKey = apiKey;
