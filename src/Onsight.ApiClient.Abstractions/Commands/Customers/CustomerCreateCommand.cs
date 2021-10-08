@@ -2,7 +2,7 @@
 {
     public class CustomerCreateCommand
     {
-        public string Name { get; init; } = string.Empty;
+        public string Name { get; init; } = null!;
 
         public string? ExternalKey { get; init; } 
         public string? Comment { get; init; } 
