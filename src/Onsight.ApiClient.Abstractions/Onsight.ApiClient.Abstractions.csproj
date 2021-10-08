@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blauhaus.Analytics.Abstractions" Version="1.6.19" />
+    <PackageReference Include="Blauhaus.Analytics.Abstractions" Version="1.7.2" />
     <PackageReference Include="Blauhaus.Responses" Version="0.4.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
