@@ -42,7 +42,7 @@ namespace Onsight.ApiClient.Clients.Auth
                     }
                     else
                     {
-                        throw new Exception("Invald access token received");
+                        throw new Exception("Invalid access token received");
                     }
                 }
                 else

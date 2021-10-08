@@ -9,10 +9,11 @@
   <ItemGroup>
     <Compile Include=".Ioc\ServiceCollectionExtensions.cs" />
     <Compile Include="Clients\.Base\BaseOnsightApiClient.cs" />
+    <Compile Include="Clients\.Base\BaseOnsightApiDtoClient.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blauhaus.Analytics.Abstractions" Version="1.6.19" />
+    <PackageReference Include="Blauhaus.Analytics.Abstractions" Version="1.7.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />

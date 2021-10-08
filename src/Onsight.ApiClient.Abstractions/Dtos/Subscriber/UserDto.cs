@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Onsight.ApiClient.Abstractions.Dtos.Base;
+using Onsight.ApiClient.Abstractions.Dtos.Common;
 
 namespace Onsight.ApiClient.Abstractions.Dtos.Subscriber
 {

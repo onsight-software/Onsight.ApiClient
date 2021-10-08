@@ -16,7 +16,7 @@ using Onsight.ApiClient.Clients.Base;
 
 namespace Onsight.ApiClient.Clients
 {
-    public class CustomersClient : BaseOnsightApiClient<CustomerDto>, ICustomersClient
+    public class CustomersClient : BaseOnsightApiDtoClient<CustomerDto>, ICustomersClient
     {
         public CustomersClient(
             HttpClient httpClient, 
