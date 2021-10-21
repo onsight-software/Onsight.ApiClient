@@ -23,6 +23,8 @@ namespace Onsight.ApiClient.Clients.Auth
         { 
         }
 
+        //todo user authentication
+
         public async Task AuthenticateAsync(HttpClient httpClient, CancellationToken token = default)
         {
             if (_tokenResponse == null)
