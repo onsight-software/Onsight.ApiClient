@@ -25,6 +25,8 @@ namespace Onsight.ApiClient.Ioc
 
         private static IServiceCollection AddClients(this IServiceCollection services)
         {
+            
+
             services.AddHttpClient<IAuthenticationClient, AuthenticationClient>();
             services.AddHttpClient<IProductsClient, ProductsClient>();
             return services;
