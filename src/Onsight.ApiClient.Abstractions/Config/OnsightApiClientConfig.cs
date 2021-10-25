@@ -7,13 +7,17 @@ namespace Onsight.ApiClient.Abstractions.Config
 
         public OnsightApiClientConfig(string apiKey, string apiSecret, string? serviceUrl = null) : base("", "")
         {
-            ServiceUrl = serviceUrl ?? "http://publicapiv5.onsightapp.com";
+            ServiceUrl = serviceUrl ?? "http://publicapiv2.onsightapp.com";
+            UserAuthEndpoint = "https://apiv14.onsightapp.com/api/Auth/VerifyByPost";
             ApiKey = apiKey;
             ApiSecret = apiSecret;
+            DeviceId = "ApiDevice";
         }
 
         public string ServiceUrl { get; protected set; }
         public string ApiKey { get; protected set; }
         public string ApiSecret { get; protected set; }
+        public string UserAuthEndpoint { get; protected set; }
+        public string DeviceId { get; }
     }
 }

@@ -7,5 +7,6 @@ namespace Onsight.ApiClient.Clients.Auth
     public interface IAuthenticationClient
     {
         Task AuthenticateAsync(HttpClient httpClient, CancellationToken token = default);
+        Task AuthenticateUserAsync(HttpClient httpClient, string emailAddress, string password, CancellationToken token = default);
     }
 }

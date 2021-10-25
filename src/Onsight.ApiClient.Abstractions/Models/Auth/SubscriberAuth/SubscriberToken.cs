@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Onsight.ApiClient.Abstractions.Models.Auth
+namespace Onsight.ApiClient.Abstractions.Models.Auth.SubscriberAuth
 {
-    public class TokenResponse
+    public class SubscriberToken
     {
-        public TokenResponse(string token, DateTime expiration)
+        public SubscriberToken(string token, DateTime expiration)
         {
             Token = token;
             Expiration = expiration;

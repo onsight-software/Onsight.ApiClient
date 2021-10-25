@@ -27,8 +27,8 @@ namespace Onsight.ApiClient.Tests.Tests.Base
             Services
                 .AddSingleton<IBuildConfig>(BuildConfig.Test)
                 .RegisterConsoleLoggerService(new ConsoleTraceListener())
-                .AddSingleton<IApplicationInsightsConfig, AppTest3Config>()
-                .AddOnsightApiClient<AppTest3Config>();
+                .AddSingleton<IApplicationInsightsConfig, AppTest3ClientConfig>()
+                .AddOnsightApiClient<AppTest3ClientConfig>();
 
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")

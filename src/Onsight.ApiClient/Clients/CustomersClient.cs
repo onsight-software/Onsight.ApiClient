@@ -21,9 +21,9 @@ namespace Onsight.ApiClient.Clients
         public CustomersClient(
             HttpClient httpClient, 
             IAnalyticsService analyticsService,
-            IOnsightApiClientConfig config, 
+            IOnsightApiClientConfig clientConfig, 
             IAuthenticationClient authenticationClient) 
-                : base(httpClient, analyticsService, config, authenticationClient, "customers")
+                : base(httpClient, analyticsService, clientConfig, authenticationClient, "customers")
         {
         }
 

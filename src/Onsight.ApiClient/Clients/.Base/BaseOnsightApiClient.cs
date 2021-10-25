@@ -20,18 +20,20 @@ namespace Onsight.ApiClient.Clients.Base
     public abstract class BaseOnsightApiClient
     {
         protected readonly HttpClient HttpClient;
-        protected readonly IOnsightApiClientConfig Config;
+        protected readonly IOnsightApiClientConfig ClientConfig;
 
         protected BaseOnsightApiClient(
             HttpClient httpClient,
-            IOnsightApiClientConfig config)
+            IOnsightApiClientConfig clientConfig)
         {
             HttpClient = httpClient;
-            Config = config;
+            ClientConfig = clientConfig;
 
-            HttpClient.BaseAddress = new Uri(config.ServiceUrl);
+            HttpClient.BaseAddress = new Uri(clientConfig.ServiceUrl);
             HttpClient.DefaultRequestHeaders.Accept.Clear();
             HttpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpClient.DefaultRequestHeaders.Add("XClientPlatform", new List<string> { "XM" }  );
+            HttpClient.DefaultRequestHeaders.Add("XClientId", new List<string> { ClientConfig.DeviceId }  );
         }
     }
 
@@ -45,15 +47,15 @@ namespace Onsight.ApiClient.Clients.Base
         protected BaseOnsightApiClient(
             HttpClient httpClient, 
             IAnalyticsService analyticsService,
-            IOnsightApiClientConfig config,
+            IOnsightApiClientConfig clientConfig,
             IAuthenticationClient authenticationClient,
             string endpoint) 
-                : base(httpClient, config)
+                : base(httpClient, clientConfig)
         {
             AnalyticsService = analyticsService;
             _authenticationClient = authenticationClient;
 
-            var baseUrl = config.ServiceUrl;
+            var baseUrl = clientConfig.ServiceUrl;
             if (!baseUrl.EndsWith('/')) baseUrl += '/';
 
             if (!endpoint.EndsWith('/')) endpoint += '/';

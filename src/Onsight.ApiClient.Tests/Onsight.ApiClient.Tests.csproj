@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include=".Config\AppTest3Config.cs" />
+    <Compile Include=".Config\AppTest3UserClientConfig.cs" />
+    <Compile Include=".Config\AppTest3ClientConfig.cs" />
     <Compile Include=".Config\AppTest3Ids.cs" />
     <Compile Include="Tests\.Base\BaseGetAsyncTests.cs" />
     <Compile Include="Tests\.Base\BaseOnsightApiClientTest.cs" />
@@ -39,10 +40,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Onsight.ApiClient\Onsight.ApiClient.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Tests\AuthenticationClientTests\" />
   </ItemGroup>
 
 </Project>

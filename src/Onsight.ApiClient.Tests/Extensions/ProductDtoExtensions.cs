@@ -8,25 +8,25 @@ namespace Onsight.ApiClient.Tests.Extensions
     {
         public static void VerifyProductLinks(this ProductDto productDto, long id, long categoryId)
         {
-            Assert.That(productDto.Links[0].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}"));
+            Assert.That(productDto.Links[0].Href.EndsWith($"/products/{id}"));
             Assert.That(productDto.Links[0].Rel, Is.EqualTo("self"));
-            Assert.That(productDto.Links[1].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/productcategories/{categoryId}"));
+            Assert.That(productDto.Links[1].Href.EndsWith($"/productcategories/{categoryId}"));
             Assert.That(productDto.Links[1].Rel, Is.EqualTo("category"));
-            Assert.That(productDto.Links[2].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/associated"));
+            Assert.That(productDto.Links[2].Href.EndsWith($"/products/{id}/associated"));
             Assert.That(productDto.Links[2].Rel, Is.EqualTo("associated"));
-            Assert.That(productDto.Links[3].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/alternative"));
+            Assert.That(productDto.Links[3].Href.EndsWith($"/products/{id}/alternative"));
             Assert.That(productDto.Links[3].Rel, Is.EqualTo("alternative"));
-            Assert.That(productDto.Links[4].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/taxtypes"));
+            Assert.That(productDto.Links[4].Href.EndsWith($"/products/{id}/taxtypes"));
             Assert.That(productDto.Links[4].Rel, Is.EqualTo("taxTypes"));
-            Assert.That(productDto.Links[5].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/icons"));
+            Assert.That(productDto.Links[5].Href.EndsWith($"/products/{id}/icons"));
             Assert.That(productDto.Links[5].Rel, Is.EqualTo("icons"));
-            Assert.That(productDto.Links[6].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/customfields"));
+            Assert.That(productDto.Links[6].Href.EndsWith($"/products/{id}/customfields"));
             Assert.That(productDto.Links[6].Rel, Is.EqualTo("customFields"));
-            Assert.That(productDto.Links[7].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/specifications"));
+            Assert.That(productDto.Links[7].Href.EndsWith($"/products/{id}/specifications"));
             Assert.That(productDto.Links[7].Rel, Is.EqualTo("specifications"));
-            Assert.That(productDto.Links[8].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/secondarycategories"));
+            Assert.That(productDto.Links[8].Href.EndsWith($"/products/{id}/secondarycategories"));
             Assert.That(productDto.Links[8].Rel, Is.EqualTo("secondaryCategories"));
-            Assert.That(productDto.Links[9].Href, Is.EqualTo($"http://publicapiv5.onsightapp.com/products/{id}/customerGroupPricing"));
+            Assert.That(productDto.Links[9].Href.EndsWith($"/products/{id}/customerGroupPricing"));
             Assert.That(productDto.Links[9].Rel, Is.EqualTo("customerGroupPricing"));
         }
 

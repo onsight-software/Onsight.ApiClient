@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using Onsight.ApiClient.Abstractions.Dtos.Common;
 
 namespace Onsight.ApiClient.Abstractions.Dtos.Base
 { 

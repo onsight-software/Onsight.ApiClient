@@ -6,6 +6,7 @@ using Blauhaus.Analytics.Abstractions.Service;
 using Onsight.ApiClient.Abstractions.Clients.Products;
 using Onsight.ApiClient.Abstractions.Config;
 using Onsight.ApiClient.Abstractions.Dtos.Base;
+using Onsight.ApiClient.Abstractions.Dtos.Common;
 using Onsight.ApiClient.Abstractions.Dtos.Products;
 using Onsight.ApiClient.Clients.Auth;
 using Onsight.ApiClient.Clients.Base;
@@ -17,9 +18,9 @@ namespace Onsight.ApiClient.Clients
         public ProductsClient(
             HttpClient httpClient, 
             IAnalyticsService analyticsService,
-            IOnsightApiClientConfig config,
+            IOnsightApiClientConfig clientConfig,
             IAuthenticationClient authenticationClient) 
-            : base(httpClient, analyticsService, config, authenticationClient, "products")
+            : base(httpClient, analyticsService, clientConfig, authenticationClient, "products")
         {
         }
 

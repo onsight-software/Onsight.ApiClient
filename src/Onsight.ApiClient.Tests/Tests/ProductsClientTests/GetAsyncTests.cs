@@ -50,7 +50,7 @@ namespace Onsight.ApiClient.Tests.Tests.ProductsClientTests
             Assert.That(result.ImageLocation, Is.EqualTo("https://web.onsightapp.com/cloud/products/"));
 
             result.VerifyProductLinks(ProductIds.Scanners.BluetoothScanner, CategoryIds.Scanners);
-
         }
+         
     }
 }
