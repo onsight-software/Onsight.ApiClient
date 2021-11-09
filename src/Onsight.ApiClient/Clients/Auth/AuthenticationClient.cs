@@ -39,7 +39,7 @@ namespace Onsight.ApiClient.Clients.Auth
                 var response = await HttpClient.PostAsync("apitokens", payload, token);
                 if (response.IsSuccessStatusCode)
                 {
-                    var tokenRequestResult = await response.Content.ReadFromJsonAsync<SubscriberToken>();
+                    var tokenRequestResult = await response.Content.ReadFromJsonAsync<SubscriberToken>(cancellationToken: token);
                     if (tokenRequestResult != null)
                     {
                         _subscriberToken = tokenRequestResult;
@@ -51,7 +51,7 @@ namespace Onsight.ApiClient.Clients.Auth
                 }
                 else
                 {
-                    var content = await response.Content.ReadFromJsonAsync<ApiFailResult>();
+                    var content = await response.Content.ReadFromJsonAsync<ApiFailResult>(cancellationToken: token);
                     throw new Exception( $"Error getting access token for Onsight API: {response.StatusCode}, {content?.Message}");
                 }
             }
@@ -87,8 +87,7 @@ namespace Onsight.ApiClient.Clients.Auth
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var content = response.Content.ReadAsStringAsync();
-                    var tokenRequestResult = await response.Content.ReadFromJsonAsync<UserToken>();
+                    var tokenRequestResult = await response.Content.ReadFromJsonAsync<UserToken>(cancellationToken: token);
                     if (tokenRequestResult != null)
                     {
                         _userToken = tokenRequestResult;
@@ -100,7 +99,7 @@ namespace Onsight.ApiClient.Clients.Auth
                 }
                 else
                 {
-                    var content = await response.Content.ReadFromJsonAsync<ApiFailResult>();
+                    var content = await response.Content.ReadFromJsonAsync<ApiFailResult>(cancellationToken: token);
                     throw new Exception( $"Error getting access token for Onsight API: {response.StatusCode}, {content?.Message}");
                 }
 
