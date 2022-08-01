@@ -20,7 +20,7 @@ namespace Onsight.ApiClient.Tests.Tests.CustomersClientTests
             var exception = Assert.ThrowsAsync<HttpResponseException>(async () => await Sut.CreateAsync(command));
 
             //Assert
-            Assert.That(exception!.Message, Is.EqualTo("BadRequest: An customer name is required."));
+            Assert.That(exception!.Message, Is.EqualTo("BadRequest: Format for new customer is invalid!"));
         }
 
         [Test]
@@ -36,7 +36,7 @@ namespace Onsight.ApiClient.Tests.Tests.CustomersClientTests
             var exception = Assert.ThrowsAsync<HttpResponseException>(async () => await Sut.CreateAsync(command));
 
             //Assert
-            Assert.That(exception!.Message, Is.EqualTo("BadRequest: Duplicate active customer with name is not allowed."));
+            Assert.That(exception!.Message, Is.EqualTo("BadRequest: Duplicate active customer with same name is not allowed."));
         }
 
         [Test]
