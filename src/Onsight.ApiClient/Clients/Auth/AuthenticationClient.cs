@@ -27,6 +27,8 @@ namespace Onsight.ApiClient.Clients.Auth
         { 
         }
 
+        //todo user authentication
+
         public async Task AuthenticateAsync(HttpClient httpClient, CancellationToken token = default)
         {
             if (_subscriberToken == null && !string.IsNullOrEmpty(ClientConfig.ApiKey))
@@ -46,7 +48,7 @@ namespace Onsight.ApiClient.Clients.Auth
                     }
                     else
                     {
-                        throw new Exception("Invald access token received");
+                        throw new Exception("Invalid access token received");
                     }
                 }
                 else

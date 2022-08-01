@@ -8,7 +8,7 @@ using Onsight.ApiClient.Clients.Base;
 namespace Onsight.ApiClient.Tests.Tests.Base
 {
     public abstract class BaseGetAsyncTests<TClient, TDto> : BaseOnsightApiClientTest<TClient> 
-        where TClient : BaseOnsightApiClient<TDto>
+        where TClient : BaseOnsightApiDtoClient<TDto>
         where TDto : OnsightDto
     {
         [Test]

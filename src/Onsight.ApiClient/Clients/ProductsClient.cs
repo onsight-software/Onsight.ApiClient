@@ -2,10 +2,9 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Blauhaus.Analytics.Abstractions.Service;
+using Blauhaus.Analytics.Abstractions;
 using Onsight.ApiClient.Abstractions.Clients.Products;
 using Onsight.ApiClient.Abstractions.Config;
-using Onsight.ApiClient.Abstractions.Dtos.Base;
 using Onsight.ApiClient.Abstractions.Dtos.Common;
 using Onsight.ApiClient.Abstractions.Dtos.Products;
 using Onsight.ApiClient.Clients.Auth;
@@ -13,14 +12,14 @@ using Onsight.ApiClient.Clients.Base;
 
 namespace Onsight.ApiClient.Clients
 {
-    public class ProductsClient : BaseOnsightApiClient<ProductDto>, IProductsClient
+    public class ProductsClient : BaseOnsightApiDtoClient<ProductDto>, IProductsClient
     {
         public ProductsClient(
             HttpClient httpClient, 
-            IAnalyticsService analyticsService,
-            IOnsightApiClientConfig clientConfig,
+            IAnalyticsLogger<ProductsClient> logger,
+            IOnsightApiClientConfig config,
             IAuthenticationClient authenticationClient) 
-            : base(httpClient, analyticsService, clientConfig, authenticationClient, "products")
+            : base(httpClient, logger, config, authenticationClient, "products")
         {
         }
 

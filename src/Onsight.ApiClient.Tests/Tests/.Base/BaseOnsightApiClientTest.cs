@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Blauhaus.Analytics.Abstractions.Config;
-using Blauhaus.Analytics.Console.Ioc;
+using Blauhaus.Analytics.Serilog.Ioc;
 using Blauhaus.Common.ValueObjects.BuildConfigs;
 using Blauhaus.TestHelpers.BaseTests;
 using Microsoft.Extensions.Configuration;
@@ -26,9 +26,9 @@ namespace Onsight.ApiClient.Tests.Tests.Base
 
             Services
                 .AddSingleton<IBuildConfig>(BuildConfig.Test)
-                .RegisterConsoleLoggerService(new ConsoleTraceListener())
-                .AddSingleton<IApplicationInsightsConfig, AppTest3ClientConfig>()
-                .AddOnsightApiClient<AppTest3ClientConfig>();
+                .AddSerilogAnalytics("Onsight API Client tests", config => {})
+                .AddSingleton<IApplicationInsightsConfig, AppTest3Config>()
+                .AddOnsightApiClient<AppTest3Config>();
 
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
