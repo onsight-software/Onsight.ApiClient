@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using Blauhaus.Analytics.Abstractions.Extensions;
-using Blauhaus.Analytics.Abstractions.Service;
+using Blauhaus.Analytics.Abstractions;
+using Microsoft.Extensions.Logging;
 using Onsight.ApiClient.Abstractions.Clients.Base;
 using Onsight.ApiClient.Abstractions.Config;
 using Onsight.ApiClient.Abstractions.Dtos.Base;
@@ -24,17 +20,17 @@ namespace Onsight.ApiClient.Clients.Base
         private readonly IAuthenticationClient _authenticationClient;
         private readonly string _uri;
 
-        protected readonly IAnalyticsService AnalyticsService;
+        protected readonly IAnalyticsLogger Logger;
 
         protected BaseOnsightApiDtoClient(
             HttpClient httpClient, 
-            IAnalyticsService analyticsService,
+            IAnalyticsLogger logger,
             IOnsightApiClientConfig config,
             IAuthenticationClient authenticationClient,
             string endpoint) 
                 : base(httpClient, config)
         {
-            AnalyticsService = analyticsService;
+            Logger = logger;
             _authenticationClient = authenticationClient;
 
             var baseUrl = config.ServiceUrl;
@@ -48,7 +44,7 @@ namespace Onsight.ApiClient.Clients.Base
         public async Task<TDto> GetAsync(long id, CancellationToken token = default)
         {
             var uri = new Uri(_uri + id);
-            using var _ = AnalyticsService.StartTrace(this, $"GET {uri}");
+            using var _ = Logger.BeginTimedScope(LogLevel.Debug, "GET {uri}", _uri);
             
             await _authenticationClient.AuthenticateAsync(HttpClient, token);
             
@@ -61,7 +57,7 @@ namespace Onsight.ApiClient.Clients.Base
         {
             var uri = new Uri(_uri + route);
             
-            using var _ = AnalyticsService.StartTrace(this, $"PATCH {uri}", LogSeverity.Verbose, command.ToObjectDictionary());
+            using var _ = Logger.BeginTimedScope(LogLevel.Debug, "PATCH {uri}", _uri);
 
             await _authenticationClient.AuthenticateAsync(HttpClient, token);
             var payload = command.ToHttpContent();
@@ -74,7 +70,7 @@ namespace Onsight.ApiClient.Clients.Base
         {
             var uri = new Uri(_uri + route);
             
-            using var _ = AnalyticsService.StartTrace(this, $"POST {uri}", LogSeverity.Verbose, command.ToObjectDictionary());
+            using var _ = Logger.BeginTimedScope(LogLevel.Debug, "POST {uri}", _uri);
 
             await _authenticationClient.AuthenticateAsync(HttpClient, token);
             var payload = command.ToHttpContent();
@@ -87,7 +83,7 @@ namespace Onsight.ApiClient.Clients.Base
         {
             var uri = new Uri(_uri + route);
             
-            using var _ = AnalyticsService.StartTrace(this, $"POST {uri}", LogSeverity.Verbose, command.ToObjectDictionary());
+            using var _ = Logger.BeginTimedScope(LogLevel.Debug, "POST {uri}", _uri);
 
             await _authenticationClient.AuthenticateAsync(HttpClient, token);
             var payload = command.ToHttpContent();
@@ -101,7 +97,7 @@ namespace Onsight.ApiClient.Clients.Base
         {
             var uri = new Uri(_uri + id);
             
-            using var _ = AnalyticsService.StartTrace(this, $"DELETE {uri}", LogSeverity.Verbose, id.ToObjectDictionary());
+            using var _ = Logger.BeginTimedScope(LogLevel.Debug, "DELETE {uri}", _uri);
 
             await _authenticationClient.AuthenticateAsync(HttpClient, token);
 

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Blauhaus.Analytics.Abstractions.Service;
-using Blauhaus.Errors;
-using Blauhaus.Responses;
+using Blauhaus.Analytics.Abstractions;
 using Onsight.ApiClient.Abstractions.Clients.Customers;
 using Onsight.ApiClient.Abstractions.Commands.Customers;
 using Onsight.ApiClient.Abstractions.Config;
@@ -20,10 +16,10 @@ namespace Onsight.ApiClient.Clients
     {
         public CustomersClient(
             HttpClient httpClient, 
-            IAnalyticsService analyticsService,
+            IAnalyticsLogger<CustomersClient> logger,
             IOnsightApiClientConfig config, 
             IAuthenticationClient authenticationClient) 
-                : base(httpClient, analyticsService, config, authenticationClient, "customers")
+                : base(httpClient, logger, config, authenticationClient, "customers")
         {
         }
 
