@@ -15,8 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include=".Config\AppTest3Config.cs" />
+    <Compile Include=".Config\AppTest3ClientConfig.cs" />
     <Compile Include=".Config\AppTest3Ids.cs" />
+    <Compile Include=".Config\AppTest3UserClientConfig.cs" />
     <Compile Include="Tests\.Base\BaseGetAsyncTests.cs" />
     <Compile Include="Tests\.Base\BaseOnsightApiClientTest.cs" />
   </ItemGroup>
@@ -28,13 +29,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blauhaus.Analytics.Serilog" Version="1.8.46" />
+    <PackageReference Include="Blauhaus.Analytics.Serilog" Version="1.9.12" />
     <PackageReference Include="Blauhaus.TestHelpers" Version="1.3.18" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
   </ItemGroup>
 
   <ItemGroup>

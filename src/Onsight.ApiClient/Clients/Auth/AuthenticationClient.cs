@@ -31,9 +31,9 @@ namespace Onsight.ApiClient.Clients.Auth
 
         public async Task AuthenticateAsync(HttpClient httpClient, CancellationToken token = default)
         {
-            if (_subscriberToken == null && !string.IsNullOrEmpty(ClientConfig.ApiKey))
+            if (_subscriberToken == null && !string.IsNullOrEmpty(Config.ApiKey))
             {
-                var tokenRequest = new SubscriberTokenRequest(ClientConfig.ApiKey, ClientConfig.ApiSecret);
+                var tokenRequest = new SubscriberTokenRequest(Config.ApiKey, Config.ApiSecret);
 
                 var json = JsonConvert.SerializeObject(tokenRequest);
                 var payload = new StringContent(json, new UTF8Encoding(), "application/json");
@@ -67,7 +67,7 @@ namespace Onsight.ApiClient.Clients.Auth
 
             if (_userToken != null)
             {
-                httpClient.DefaultRequestHeaders.Add("XClientId", new List<string> { ClientConfig.DeviceId }  );
+                httpClient.DefaultRequestHeaders.Add("XClientId", new List<string> { Config.DeviceId }  );
                 httpClient.DefaultRequestHeaders.Add("XSessionId", _userToken.SessionKey);
             }
              
@@ -85,7 +85,7 @@ namespace Onsight.ApiClient.Clients.Auth
                 var json = JsonConvert.SerializeObject(tokenRequest);
                 var payload = new StringContent(json, new UTF8Encoding(), "application/json");
                 
-                var response = await HttpClient.PostAsync(ClientConfig.UserAuthEndpoint, payload, token);
+                var response = await HttpClient.PostAsync(Config.UserAuthEndpoint, payload, token);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -106,7 +106,7 @@ namespace Onsight.ApiClient.Clients.Auth
                 }
 
             }
-            httpClient.DefaultRequestHeaders.Add("XClientId", new List<string> { ClientConfig.DeviceId }  );
+            httpClient.DefaultRequestHeaders.Add("XClientId", new List<string> { Config.DeviceId }  );
             httpClient.DefaultRequestHeaders.Add("XSessionId", _userToken.SessionKey);
         }
     }

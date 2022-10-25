@@ -27,8 +27,7 @@ namespace Onsight.ApiClient.Tests.Tests.Base
             Services
                 .AddSingleton<IBuildConfig>(BuildConfig.Test)
                 .AddSerilogAnalytics("Onsight API Client tests", config => {})
-                .AddSingleton<IApplicationInsightsConfig, AppTest3Config>()
-                .AddOnsightApiClient<AppTest3Config>();
+                .AddOnsightApiClient<AppTest3ClientConfig>();
 
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
