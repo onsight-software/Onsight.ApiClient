@@ -12,14 +12,7 @@ jobs:
      - name: Set Version
        run: |
         npm install @actions/core --save
-        node ./scripts/getversion.js
-     - name: App Settings Variable Substitution
-       uses: microsoft/variable-substitution@v1
-       with:
-         files: './src/Onsight.ApiClient.Tests/appsettings.json'
-       env:
-         AppTest3_ApiKey: "${{ secrets.APPTEST3_APIKEY }}"
-         AppTest3_ApiSecret: "${{ secrets.APPTEST3_APISECRET }}"
+        node ./scripts/getversion.js 
      - name: Build NuGet Package
        run: |
         dotnet build ./src/Onsight.ApiClient.sln --configuration Release
